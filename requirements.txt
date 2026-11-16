@@ -1,0 +1,7 @@
+# Versiones verificadas en el entorno local; incluye dependencias transitivas.
+customtkinter==6.0.0
+coppeliasim-zmqremoteapi-client==2.0.4
+cbor==1.0.0
+pyzmq==27.3.0
+darkdetect==0.8.0
+packaging==26.3

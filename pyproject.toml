@@ -1,0 +1,22 @@
+[build-system]
+requires = ["setuptools>=77"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "gemelo-digital-scada"
+version = "0.1.0"
+description = "Prototipo académico SCADA para una faja transportadora en CoppeliaSim"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "customtkinter==6.0.0",
+    "coppeliasim-zmqremoteapi-client==2.0.4",
+]
+
+[project.scripts]
+scada-dashboard = "scada.dashboard:main"
+scada-coppelia = "scada.conexion:main"
+scada-generar = "scada.generador:main"
+
+[tool.setuptools.packages.find]
+include = ["scada*"]

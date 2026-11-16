@@ -1,0 +1,30 @@
+# Entornos y cachés
+.venv/
+venv/
+env/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+*.egg-info/
+build/
+dist/
+
+# Configuración local y credenciales
+.env
+.env.*
+!.env.example
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Experimentos y datos generados; conservar documentación
+/datos/**
+!/datos/README.md
+*.log
+*.joblib
+*.pkl
+*.zip

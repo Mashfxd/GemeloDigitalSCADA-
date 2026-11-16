@@ -1,0 +1,21 @@
+name: Verificación Python
+on: [push, pull_request]
+permissions:
+  contents: read
+jobs:
+  pruebas:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        python: ['3.12', '3.14']
+    steps:
+      - uses: actions/checkout@v7.0.0
+      - uses: actions/setup-python@v7.0.0
+        with:
+          python-version: ${{ matrix.python }}
+          cache: pip
+      - run: python -m pip install -r requirements.txt
+      - run: python -m compileall -q scada dashboard_scada.py conexion_Coppelia.py generador_datos.py
+      - run: python -m unittest discover -s tests -v
+      - run: python generador_datos.py --muestras 3 --semilla 42
